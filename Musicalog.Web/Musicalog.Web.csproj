@@ -225,12 +225,6 @@
     <Content Include="Views\Albums\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Musicalog.Data\Musicalog.Data.csproj">
-      <Project>{2a853431-f005-49e7-8b92-5061b1bfabb1}</Project>
-      <Name>Musicalog.Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AlbumService\" />
   </ItemGroup>
   <ItemGroup />
