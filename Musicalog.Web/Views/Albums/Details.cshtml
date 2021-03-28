@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+
+@model Musicalog.Web.AlbumService.AlbumDetailsModel
+
+<div class="card">
+    <div class="card-header">
+        <strong>Album Details</strong>
+    </div>
+    <div class="card-body">
+        <dl>
+            <dt>Album Name</dt>
+            <dd>@Model.Name</dd>
+            <dt>Artist</dt>
+            <dd>@Model.Artist</dd>
+            <dt>Label</dt>
+            <dd>@Model.Label</dd>
+            <dt>Album Type</dt>
+            <dd>@Model.Type</dd>
+            <dt>Stock</dt>
+            <dd>@Model.Stock</dd>
+        </dl>
+    </div>
+    <div class="card-footer">
+    </div>
+</div>
+
+<a href="@Url.Action("List", "Albums")">< Back to list</a>
+

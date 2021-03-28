@@ -1,0 +1,55 @@
+﻿@using Musicalog.Web.AlbumService;
+@using Musicalog.Data;
+@using PagedList;
+
+@model AlbumListModel
+
+@{
+    ViewBag.Title = "All Albums";
+}
+
+<div class="card">
+    <div class="card-header">
+        <strong>@(((Model.Page - 1) * Model.Page) + 1) - @(((Model.Page) * Model.Page)) Albums of @Model.Albums.TotalItemCount</strong>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="w-30">Name</th>
+                    <th class="w-30">Artist</th>
+                    <th class="w-10">Stock</th>
+                    <th class="w-10">Type</th>
+                    <th class="w-10">Edit</th>
+                    <th class="w-10">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var album in Model.Albums)
+                {
+                    <tr>
+                        <td><a href="albums/details/@album.Id">@album.Name</a></td>
+                        <td>@album.Artist</td>
+                        <td>@album.Stock</td>
+                        <td>@album.Type</td>
+                        <td>
+                            <button type="button" class="edit btn btn-success" data-id="@album.Id">Edit</button>
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("Delete", "Home", FormMethod.Post))
+                            {
+                                @Html.Hidden("Id", album.Id);
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button id="addAlbum" class="btn btn-success float-right">Add Album</button>
+    </div>
+</div>
+
+<script src="./Static/js/list.js"></script>

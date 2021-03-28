@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PagedList" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PagedList" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" />
+  <xs:complexType name="PagedListOfAlbumListItemModelnPXDVggM">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="PagedListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/PagedList" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AlbumListItemModel" Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasePagedListOfAlbumListItemModelnPXDVggM">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PagedListOfAlbumListItemModelnPXDVggM" nillable="true" type="tns:PagedListOfAlbumListItemModelnPXDVggM" />
+  <xs:complexType name="BasePagedListOfAlbumListItemModelnPXDVggM">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="BasePagedListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/PagedList" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AlbumListItemModel" Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PagedListMetaData">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" name="Subset" nillable="true" type="q1:ArrayOfAlbumListItemModel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BasePagedListOfAlbumListItemModelnPXDVggM" nillable="true" type="tns:BasePagedListOfAlbumListItemModelnPXDVggM" />
+  <xs:complexType name="PagedListMetaData">
+    <xs:sequence>
+      <xs:element name="_x003C_FirstItemOnPage_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_HasNextPage_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_HasPreviousPage_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsFirstPage_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsLastPage_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_LastItemOnPage_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PageCount_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PageNumber_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PageSize_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_TotalItemCount_x003E_k__BackingField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedListMetaData" nillable="true" type="tns:PagedListMetaData" />
+</xs:schema>

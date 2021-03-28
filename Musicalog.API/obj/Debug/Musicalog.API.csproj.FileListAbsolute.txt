@@ -1,0 +1,12 @@
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\Musicalog.API.dll.config
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\Musicalog.API.dll
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\Musicalog.API.pdb
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\Musicalog.Data.dll
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\PagedList.dll
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\Musicalog.Data.pdb
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\bin\Debug\PagedList.xml
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\obj\Debug\Musicalog.API.csprojAssemblyReference.cache
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\obj\Debug\Musicalog.API.csproj.CoreCompileInputs.cache
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\obj\Debug\Musicalog.API.csproj.CopyComplete
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\obj\Debug\Musicalog.API.dll
+C:\Users\dansc\source\repos\Musicalog.Web\Musicalog.API\obj\Debug\Musicalog.API.pdb
