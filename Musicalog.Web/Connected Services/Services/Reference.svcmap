@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d2604bfd-f532-4fb1-b740-65e2a2b631de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55540/AlbumService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AlbumService.xsd" MetadataType="Schema" ID="79ef0134-b8bd-431a-a050-90b95745187e" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AlbumService1.xsd" MetadataType="Schema" ID="6f88e5e9-ed23-476f-82ef-a2ead4482acc" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AlbumService2.xsd" MetadataType="Schema" ID="aecc899e-775c-418a-a63e-8fc3f1d17fa6" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AlbumService.disco" MetadataType="Disco" ID="21596d6b-42ad-4579-9e7c-4d2d0b0bb979" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?disco" />
+    <MetadataFile FileName="AlbumService3.xsd" MetadataType="Schema" ID="0f6a6a5d-151a-4e54-bf03-2f2aa037272e" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AlbumService.wsdl" MetadataType="Wsdl" ID="6cc53609-7862-4c6b-8b75-2ae9fd3c95a6" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?wsdl" />
+    <MetadataFile FileName="AlbumService4.xsd" MetadataType="Schema" ID="c8798b07-4367-4d38-b37a-15a2118347dc" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd5" />
+    <MetadataFile FileName="AlbumService5.xsd" MetadataType="Schema" ID="ea04e9ff-ab0d-42ba-981e-269f3e77ee5a" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

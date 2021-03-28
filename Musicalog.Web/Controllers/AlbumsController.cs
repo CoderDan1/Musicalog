@@ -1,5 +1,5 @@
 ﻿using Musicalog.Web.Adapters;
-using Musicalog.Web.AlbumService;
+using Musicalog.Web.Services;
 using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;

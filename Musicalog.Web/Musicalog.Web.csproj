@@ -148,7 +148,7 @@
   <ItemGroup>
     <Compile Include="Adapters\CreateAlbumModelAdapter.cs" />
     <Compile Include="Adapters\ICreateAlbumModelAdapter.cs" />
-    <Compile Include="Connected Services\AlbumService\Reference.cs">
+    <Compile Include="Connected Services\Services\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -162,27 +162,22 @@
     <Compile Include="Modules\AlbumModule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AlbumService\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\AlbumService\configuration91.svcinfo" />
-    <None Include="Connected Services\AlbumService\configuration.svcinfo" />
-    <Content Include="Connected Services\AlbumService\Musicalog.Web.AlbumService.AlbumDetailsModel.datasource">
+    <None Include="Connected Services\Services\AlbumService.disco" />
+    <None Include="Connected Services\Services\configuration91.svcinfo" />
+    <None Include="Connected Services\Services\configuration.svcinfo" />
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumDetailsModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\AlbumService\Musicalog.Web.AlbumService.AlbumListModel.datasource">
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumListModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\AlbumService\Musicalog.Web.AlbumService.CreateAlbumRequestModel.datasource">
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.CreateAlbumRequestModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\AlbumService\Musicalog.Web.AlbumService.CreateAlbumResultModel.datasource">
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.CreateAlbumResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\AlbumService\Musicalog.Data.Models.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\AlbumService\Reference.svcmap">
+    <None Include="Connected Services\Services\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -208,30 +203,36 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\AlbumService\Musicalog.API.Models.xsd">
+    <None Include="Connected Services\Services\AlbumService.wsdl" />
+    <None Include="Connected Services\Services\AlbumService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlbumService\PagedList.xsd">
+    <None Include="Connected Services\Services\AlbumService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlbumService\service.wsdl" />
-    <None Include="Connected Services\AlbumService\service.xsd">
+    <None Include="Connected Services\Services\AlbumService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlbumService\service1.xsd">
+    <None Include="Connected Services\Services\AlbumService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Services\AlbumService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Services\AlbumService5.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
     <Content Include="Views\Albums\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\AlbumService\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Musicalog.Data.Models\Musicalog.Data.Models.csproj">
       <Project>{2a853431-f005-49e7-8b92-5061b1bfabb1}</Project>
       <Name>Musicalog.Data.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

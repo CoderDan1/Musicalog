@@ -2,7 +2,7 @@
     ViewBag.Title = "Details";
 }
 
-@model Musicalog.Web.AlbumService.AlbumDetailsModel
+@model Musicalog.Web.Services.AlbumDetailsModel
 
 <div class="card">
     <div class="card-header">
@@ -11,27 +11,27 @@
     <div class="card-body">
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <label>Album Name</label>
+                <strong>Album Name</strong>
                 <p>@Model.Name</p>
             </div>
             <div class="col-lg-6 col-md-12">
-                <label>Album Type</label>
+                <strong>Album Type</strong>
                 <p>@Model.Type</p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <label class="form-label fw-bold">Artist</label>
+                <strong>Artist</strong>
                 <p>@Model.Artist</p>
             </div>
             <div class="col-lg-6 col-md-12">
-                <label>Label</label>
+                <strong>Label</strong>
                 <p>@Model.Label</p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <label>Stock</label>
+                <strong>Stock</strong>
                 <p>@Model.Stock</p>
             </div>
         </div>

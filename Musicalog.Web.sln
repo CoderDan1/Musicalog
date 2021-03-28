@@ -5,18 +5,16 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Web", "Musicalog.Web\Musicalog.Web.csproj", "{98171AC7-5890-4F38-8563-C61801DF14E6}"
 	ProjectSection(ProjectDependencies) = postProject
-		{E6F3E50F-9899-4370-831C-50CF916A00F4} = {E6F3E50F-9899-4370-831C-50CF916A00F4}
+		{20EFFC4A-5009-4E63-B578-5579DE59D9F7} = {20EFFC4A-5009-4E63-B578-5579DE59D9F7}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.API", "Musicalog.API\Musicalog.API.csproj", "{E6F3E50F-9899-4370-831C-50CF916A00F4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.API.Host", "Musicalog.API.Host\Musicalog.API.Host.csproj", "{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Data", "Musicalog.Data\Musicalog.Data.csproj", "{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Data.Models", "Musicalog.Data.Models\Musicalog.Data.Models.csproj", "{2A853431-F005-49E7-8B92-5061B1BFABB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Seed", "Musicalog.Seed\Musicalog.Seed.csproj", "{504D4388-233F-467E-AB1D-E33BDCA08E1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Service", "Musicalog.Service\Musicalog.Service.csproj", "{20EFFC4A-5009-4E63-B578-5579DE59D9F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,14 +26,6 @@ Global
 		{98171AC7-5890-4F38-8563-C61801DF14E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98171AC7-5890-4F38-8563-C61801DF14E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98171AC7-5890-4F38-8563-C61801DF14E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6F3E50F-9899-4370-831C-50CF916A00F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6F3E50F-9899-4370-831C-50CF916A00F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6F3E50F-9899-4370-831C-50CF916A00F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6F3E50F-9899-4370-831C-50CF916A00F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,6 +38,10 @@ Global
 		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20EFFC4A-5009-4E63-B578-5579DE59D9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EFFC4A-5009-4E63-B578-5579DE59D9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20EFFC4A-5009-4E63-B578-5579DE59D9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EFFC4A-5009-4E63-B578-5579DE59D9F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

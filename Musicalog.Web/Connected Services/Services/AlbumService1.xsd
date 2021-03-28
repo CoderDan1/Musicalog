@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/PagedList" />
+  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" />
+  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AlbumListModel">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/PagedList" minOccurs="0" name="Albums" nillable="true" type="q1:PagedListOfAlbumListItemModelFwYdnfhg" />
+      <xs:element minOccurs="0" name="Page" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="Sort" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" minOccurs="0" name="SortDirection" type="q2:SortDirection" />
+      <xs:element minOccurs="0" name="SuccessMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlbumListModel" nillable="true" type="tns:AlbumListModel" />
+  <xs:complexType name="ArrayOfAlbumListItemModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AlbumListItemModel" nillable="true" type="tns:AlbumListItemModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlbumListItemModel" nillable="true" type="tns:ArrayOfAlbumListItemModel" />
+  <xs:complexType name="AlbumListItemModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artist" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlbumListItemModel" nillable="true" type="tns:AlbumListItemModel" />
+  <xs:complexType name="AlbumDetailsModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Artist" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AlbumDetailsModel" nillable="true" type="tns:AlbumDetailsModel" />
+  <xs:complexType name="CreateAlbumRequestModel">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" minOccurs="0" name="AlbumType" type="q3:AlbumType" />
+      <xs:element minOccurs="0" name="ArtistId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Artists" nillable="true" type="tns:ArrayOfArtistListItemModel" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateAlbumRequestModel" nillable="true" type="tns:CreateAlbumRequestModel" />
+  <xs:complexType name="ArrayOfArtistListItemModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArtistListItemModel" nillable="true" type="tns:ArtistListItemModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArtistListItemModel" nillable="true" type="tns:ArrayOfArtistListItemModel" />
+  <xs:complexType name="ArtistListItemModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArtistListItemModel" nillable="true" type="tns:ArtistListItemModel" />
+  <xs:complexType name="CreateAlbumResultModel">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Errors" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateAlbumResultModel" nillable="true" type="tns:CreateAlbumResultModel" />
+</xs:schema>

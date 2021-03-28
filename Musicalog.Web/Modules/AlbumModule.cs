@@ -1,5 +1,5 @@
 ﻿using Musicalog.Web.Adapters;
-using Musicalog.Web.AlbumService;
+using Musicalog.Web.Services;
 using Ninject.Modules;
 
 namespace Musicalog.Web.Modules

@@ -7,7 +7,7 @@ namespace Musicalog.Web.Adapters
     /// </summary>
     public class CreateAlbumModelAdapter : ICreateAlbumModelAdapter
     {
-        public Models.CreateAlbumRequestModel FromService(AlbumService.CreateAlbumRequestModel model) =>
+        public Models.CreateAlbumRequestModel FromService(Services.CreateAlbumRequestModel model) =>
             new Models.CreateAlbumRequestModel()
             {
                 AlbumType = model.AlbumType,
@@ -23,8 +23,8 @@ namespace Musicalog.Web.Adapters
                 Stock = model.Stock
             };
 
-        public AlbumService.CreateAlbumRequestModel ToService(Models.CreateAlbumRequestModel model) =>
-            new AlbumService.CreateAlbumRequestModel()
+        public Services.CreateAlbumRequestModel ToService(Models.CreateAlbumRequestModel model) =>
+            new Services.CreateAlbumRequestModel()
             {
                 AlbumType = model.AlbumType,
                 ArtistId = model.ArtistId,

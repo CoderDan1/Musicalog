@@ -1,0 +1,7 @@
+﻿<%@ ServiceHost 
+    Language="C#" 
+    Debug="true"
+    Service="Musicalog.Service.AlbumService" 
+    CodeBehind="AlbumService.svc.cs" 
+    Factory="Ninject.Extensions.Wcf.NinjectServiceHostFactory"
+%>

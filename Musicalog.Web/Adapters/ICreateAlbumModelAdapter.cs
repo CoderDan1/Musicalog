@@ -2,7 +2,7 @@
 {
     public interface ICreateAlbumModelAdapter
     {
-        Models.CreateAlbumRequestModel FromService(AlbumService.CreateAlbumRequestModel model);
-        AlbumService.CreateAlbumRequestModel ToService(Models.CreateAlbumRequestModel model);
+        Models.CreateAlbumRequestModel FromService(Services.CreateAlbumRequestModel model);
+        Services.CreateAlbumRequestModel ToService(Models.CreateAlbumRequestModel model);
     }
 }
