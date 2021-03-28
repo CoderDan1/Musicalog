@@ -12,9 +12,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.API", "Musicalog.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.API.Host", "Musicalog.API.Host\Musicalog.API.Host.csproj", "{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Data", "Musicalog.Data\Musicalog.Data.csproj", "{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Data.Models", "Musicalog.Data.Models\Musicalog.Data.Models.csproj", "{2A853431-F005-49E7-8B92-5061B1BFABB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Data", "Musicalog.Data\Musicalog.Data.csproj", "{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musicalog.Seed", "Musicalog.Seed\Musicalog.Seed.csproj", "{504D4388-233F-467E-AB1D-E33BDCA08E1E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,14 +36,18 @@ Global
 		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1A22882-1201-4C6D-94D1-7F34C44DC5C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A853431-F005-49E7-8B92-5061B1BFABB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{504D4388-233F-467E-AB1D-E33BDCA08E1E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

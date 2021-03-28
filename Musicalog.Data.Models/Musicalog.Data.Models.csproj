@@ -8,8 +8,8 @@
     <ProjectGuid>{2A853431-F005-49E7-8B92-5061B1BFABB1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Musicalog.Data</RootNamespace>
-    <AssemblyName>Musicalog.Data</AssemblyName>
+    <RootNamespace>Musicalog.Data.Models</RootNamespace>
+    <AssemblyName>Musicalog.Data.Models</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

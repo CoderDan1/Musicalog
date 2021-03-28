@@ -227,6 +227,12 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AlbumService\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Musicalog.Data.Models\Musicalog.Data.Models.csproj">
+      <Project>{2a853431-f005-49e7-8b92-5061b1bfabb1}</Project>
+      <Name>Musicalog.Data.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
