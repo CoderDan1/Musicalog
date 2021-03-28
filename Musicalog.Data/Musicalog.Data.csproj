@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A853431-F005-49E7-8B92-5061B1BFABB1}</ProjectGuid>
+    <ProjectGuid>{4AEB3F1D-42B7-41E5-8126-ED202B3F376A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Musicalog.Data</RootNamespace>
@@ -51,12 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Album.cs" />
-    <Compile Include="AlbumType.cs" />
-    <Compile Include="Artist.cs" />
-    <Compile Include="Label.cs" />
+    <Compile Include="AlbumsContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SortDirection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Musicalog.Data.Models\Musicalog.Data.Models.csproj">
+      <Project>{2a853431-f005-49e7-8b92-5061b1bfabb1}</Project>
+      <Name>Musicalog.Data.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

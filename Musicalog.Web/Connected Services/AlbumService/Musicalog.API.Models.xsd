@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import namespace="http://schemas.datacontract.org/2004/07/PagedList" />
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" />
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:complexType name="AlbumListModel">
@@ -10,7 +10,7 @@
       <xs:element minOccurs="0" name="Page" type="xs:int" />
       <xs:element minOccurs="0" name="PageSize" type="xs:int" />
       <xs:element minOccurs="0" name="Sort" nillable="true" type="xs:string" />
-      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Data" minOccurs="0" name="SortDirection" type="q2:SortDirection" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" minOccurs="0" name="SortDirection" type="q2:SortDirection" />
       <xs:element minOccurs="0" name="SuccessMessage" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -44,7 +44,7 @@
   <xs:element name="AlbumDetailsModel" nillable="true" type="tns:AlbumDetailsModel" />
   <xs:complexType name="CreateAlbumRequestModel">
     <xs:sequence>
-      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Musicalog.Data" minOccurs="0" name="AlbumType" type="q3:AlbumType" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" minOccurs="0" name="AlbumType" type="q3:AlbumType" />
       <xs:element minOccurs="0" name="ArtistId" type="ser:guid" />
       <xs:element minOccurs="0" name="Artists" nillable="true" type="tns:ArrayOfArtistListItemModel" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="ser:guid" />

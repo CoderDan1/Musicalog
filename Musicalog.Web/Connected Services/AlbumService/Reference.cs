@@ -13,6 +13,17 @@ namespace Musicalog.Web.AlbumService {
     using System;
     
     
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SortDirection", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models")]
+    public enum SortDirection : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Ascending = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Descending = 1,
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="AlbumListModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models")]
@@ -35,7 +46,7 @@ namespace Musicalog.Web.AlbumService {
         private string SortField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Musicalog.Data.SortDirection SortDirectionField;
+        private Musicalog.Web.AlbumService.SortDirection SortDirectionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SuccessMessageField;
@@ -103,7 +114,7 @@ namespace Musicalog.Web.AlbumService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Musicalog.Data.SortDirection SortDirection {
+        public Musicalog.Web.AlbumService.SortDirection SortDirection {
             get {
                 return this.SortDirectionField;
             }
@@ -382,7 +393,7 @@ namespace Musicalog.Web.AlbumService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Musicalog.Data.AlbumType AlbumTypeField;
+        private Musicalog.Web.AlbumService.AlbumType AlbumTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid ArtistIdField;
@@ -410,7 +421,7 @@ namespace Musicalog.Web.AlbumService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Musicalog.Data.AlbumType AlbumType {
+        public Musicalog.Web.AlbumService.AlbumType AlbumType {
             get {
                 return this.AlbumTypeField;
             }
@@ -495,6 +506,17 @@ namespace Musicalog.Web.AlbumService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumType", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models")]
+    public enum AlbumType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Vinyl = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CD = 1,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -640,10 +662,10 @@ namespace Musicalog.Web.AlbumService {
     public interface IAlbumService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted", ReplyAction="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse")]
-        Musicalog.Web.AlbumService.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Data.SortDirection direction);
+        Musicalog.Web.AlbumService.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Web.AlbumService.SortDirection direction);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted", ReplyAction="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse")]
-        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Data.SortDirection direction);
+        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Web.AlbumService.SortDirection direction);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetById", ReplyAction="http://tempuri.org/IAlbumService/GetByIdResponse")]
         Musicalog.Web.AlbumService.AlbumDetailsModel GetById(System.Guid id);
@@ -691,11 +713,11 @@ namespace Musicalog.Web.AlbumService {
                 base(binding, remoteAddress) {
         }
         
-        public Musicalog.Web.AlbumService.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Data.SortDirection direction) {
+        public Musicalog.Web.AlbumService.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Web.AlbumService.SortDirection direction) {
             return base.Channel.GetAllPagedAndSorted(page, take, sort, direction);
         }
         
-        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Data.SortDirection direction) {
+        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Web.AlbumService.SortDirection direction) {
             return base.Channel.GetAllPagedAndSortedAsync(page, take, sort, direction);
         }
         

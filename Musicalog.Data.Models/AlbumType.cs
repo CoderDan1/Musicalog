@@ -1,4 +1,4 @@
-﻿namespace Musicalog.Data
+﻿namespace Musicalog.Data.Models
 {
     public enum AlbumType
     {

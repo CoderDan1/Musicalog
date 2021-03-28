@@ -1,4 +1,4 @@
-﻿using Musicalog.Data;
+﻿using Musicalog.Data.Models;
 using System.Linq;
 
 namespace Musicalog.API.Extensions

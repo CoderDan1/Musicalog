@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Musicalog.Data
+namespace Musicalog.Data.Models
 {
     public class Label
     {

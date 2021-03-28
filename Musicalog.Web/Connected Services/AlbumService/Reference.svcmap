@@ -25,7 +25,7 @@
     <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0452d125-654f-4fdc-8981-0c8668c0ab16" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="096fa49d-e0a6-447d-96ca-101dcddf9806" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="748a3460-7067-4e98-8a6a-50bf6e3e6e99" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
-    <MetadataFile FileName="Musicalog.Data.xsd" MetadataType="Schema" ID="21cf14c0-a282-408a-a04a-1ecc4e27de73" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
+    <MetadataFile FileName="Musicalog.Data.Models.xsd" MetadataType="Schema" ID="e8b0636d-ec1e-4574-9909-91bb636bfc60" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
     <MetadataFile FileName="Musicalog.API.Models.xsd" MetadataType="Schema" ID="3e909641-c143-4d99-8f4d-1dcad1adb2ba" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
     <MetadataFile FileName="PagedList.xsd" MetadataType="Schema" ID="ebaaec3d-0f77-4359-96cb-7aeec0c86fa8" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />
     <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="3523f20a-63bf-44fb-ac63-bd79b244d922" SourceId="1" SourceUrl="http://localhost:8733/Musicalog.API/AlbumService/mex" />

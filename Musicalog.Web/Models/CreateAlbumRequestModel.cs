@@ -1,6 +1,4 @@
-﻿using Musicalog.Data;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace Musicalog.Web.Models

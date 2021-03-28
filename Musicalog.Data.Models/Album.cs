@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Musicalog.Data
+namespace Musicalog.Data.Models
 {
     public class Album
     {

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" />
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="GetAllPagedAndSorted">
@@ -9,7 +9,7 @@
         <xs:element minOccurs="0" name="page" type="xs:int" />
         <xs:element minOccurs="0" name="take" type="xs:int" />
         <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Musicalog.Data" minOccurs="0" name="direction" type="q1:SortDirection" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" minOccurs="0" name="direction" type="q1:SortDirection" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

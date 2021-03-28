@@ -1,4 +1,4 @@
-﻿using Musicalog.Data;
+﻿using Musicalog.Data.Models;
 using PagedList;
 using System.Runtime.Serialization;
 

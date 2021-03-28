@@ -179,6 +179,9 @@
     <Content Include="Connected Services\AlbumService\Musicalog.Web.AlbumService.CreateAlbumResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\AlbumService\Musicalog.Data.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\AlbumService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -208,9 +211,6 @@
     <None Include="Connected Services\AlbumService\Musicalog.API.Models.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\AlbumService\Musicalog.Data.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\AlbumService\PagedList.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -227,7 +227,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\AlbumService\" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

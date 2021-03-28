@@ -1,5 +1,5 @@
 ﻿using Musicalog.API.Models;
-using Musicalog.Data;
+using Musicalog.Data.Models;
 using System;
 
 namespace Musicalog.API

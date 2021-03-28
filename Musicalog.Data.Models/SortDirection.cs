@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Musicalog.Data
+namespace Musicalog.Data.Models
 {
     public enum SortDirection
     {

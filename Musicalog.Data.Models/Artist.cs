@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Musicalog.Data
+namespace Musicalog.Data.Models
 {
     public class Artist
     {
