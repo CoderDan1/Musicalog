@@ -37,6 +37,9 @@ namespace Musicalog.Web.AlbumService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Musicalog.Data.SortDirection SortDirectionField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SuccessMessageField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -108,6 +111,19 @@ namespace Musicalog.Web.AlbumService {
                 if ((this.SortDirectionField.Equals(value) != true)) {
                     this.SortDirectionField = value;
                     this.RaisePropertyChanged("SortDirection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SuccessMessage {
+            get {
+                return this.SuccessMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SuccessMessageField, value) != true)) {
+                    this.SuccessMessageField = value;
+                    this.RaisePropertyChanged("SuccessMessage");
                 }
             }
         }
@@ -358,9 +374,9 @@ namespace Musicalog.Web.AlbumService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CreateAlbumModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CreateAlbumRequestModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models")]
     [System.SerializableAttribute()]
-    public partial class CreateAlbumModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class CreateAlbumRequestModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -370,6 +386,9 @@ namespace Musicalog.Web.AlbumService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid ArtistIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Musicalog.Web.AlbumService.ArtistListItemModel[] ArtistsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.Guid> IdField;
@@ -412,6 +431,19 @@ namespace Musicalog.Web.AlbumService {
                 if ((this.ArtistIdField.Equals(value) != true)) {
                     this.ArtistIdField = value;
                     this.RaisePropertyChanged("ArtistId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Musicalog.Web.AlbumService.ArtistListItemModel[] Artists {
+            get {
+                return this.ArtistsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArtistsField, value) != true)) {
+                    this.ArtistsField = value;
+                    this.RaisePropertyChanged("Artists");
                 }
             }
         }
@@ -465,27 +497,171 @@ namespace Musicalog.Web.AlbumService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ArtistListItemModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models")]
+    [System.SerializableAttribute()]
+    public partial class ArtistListItemModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CreateAlbumResultModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models")]
+    [System.SerializableAttribute()]
+    public partial class CreateAlbumResultModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] ErrorsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool SuccessField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] Errors {
+            get {
+                return this.ErrorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
+                    this.ErrorsField = value;
+                    this.RaisePropertyChanged("Errors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success {
+            get {
+                return this.SuccessField;
+            }
+            set {
+                if ((this.SuccessField.Equals(value) != true)) {
+                    this.SuccessField = value;
+                    this.RaisePropertyChanged("Success");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AlbumService.IAlbumService")]
     public interface IAlbumService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAlbums", ReplyAction="http://tempuri.org/IAlbumService/GetAlbumsResponse")]
-        Musicalog.Web.AlbumService.AlbumListModel GetAlbums(int page, int take, string sort, Musicalog.Data.SortDirection direction);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted", ReplyAction="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse")]
+        Musicalog.Web.AlbumService.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Data.SortDirection direction);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAlbums", ReplyAction="http://tempuri.org/IAlbumService/GetAlbumsResponse")]
-        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAlbumsAsync(int page, int take, string sort, Musicalog.Data.SortDirection direction);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted", ReplyAction="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Data.SortDirection direction);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAlbum", ReplyAction="http://tempuri.org/IAlbumService/GetAlbumResponse")]
-        Musicalog.Web.AlbumService.AlbumDetailsModel GetAlbum(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetById", ReplyAction="http://tempuri.org/IAlbumService/GetByIdResponse")]
+        Musicalog.Web.AlbumService.AlbumDetailsModel GetById(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAlbum", ReplyAction="http://tempuri.org/IAlbumService/GetAlbumResponse")]
-        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumDetailsModel> GetAlbumAsync(System.Guid id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetById", ReplyAction="http://tempuri.org/IAlbumService/GetByIdResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumDetailsModel> GetByIdAsync(System.Guid id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/AddAlbum", ReplyAction="http://tempuri.org/IAlbumService/AddAlbumResponse")]
-        System.Guid AddAlbum(Musicalog.Web.AlbumService.CreateAlbumModel model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Create", ReplyAction="http://tempuri.org/IAlbumService/CreateResponse")]
+        Musicalog.Web.AlbumService.CreateAlbumResultModel Create(Musicalog.Web.AlbumService.CreateAlbumRequestModel model);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/AddAlbum", ReplyAction="http://tempuri.org/IAlbumService/AddAlbumResponse")]
-        System.Threading.Tasks.Task<System.Guid> AddAlbumAsync(Musicalog.Web.AlbumService.CreateAlbumModel model);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Create", ReplyAction="http://tempuri.org/IAlbumService/CreateResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.CreateAlbumResultModel> CreateAsync(Musicalog.Web.AlbumService.CreateAlbumRequestModel model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel", ReplyAction="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse")]
+        Musicalog.Web.AlbumService.CreateAlbumRequestModel GetDefaultCreateModel();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel", ReplyAction="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.AlbumService.CreateAlbumRequestModel> GetDefaultCreateModelAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -515,28 +691,36 @@ namespace Musicalog.Web.AlbumService {
                 base(binding, remoteAddress) {
         }
         
-        public Musicalog.Web.AlbumService.AlbumListModel GetAlbums(int page, int take, string sort, Musicalog.Data.SortDirection direction) {
-            return base.Channel.GetAlbums(page, take, sort, direction);
+        public Musicalog.Web.AlbumService.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Data.SortDirection direction) {
+            return base.Channel.GetAllPagedAndSorted(page, take, sort, direction);
         }
         
-        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAlbumsAsync(int page, int take, string sort, Musicalog.Data.SortDirection direction) {
-            return base.Channel.GetAlbumsAsync(page, take, sort, direction);
+        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Data.SortDirection direction) {
+            return base.Channel.GetAllPagedAndSortedAsync(page, take, sort, direction);
         }
         
-        public Musicalog.Web.AlbumService.AlbumDetailsModel GetAlbum(System.Guid id) {
-            return base.Channel.GetAlbum(id);
+        public Musicalog.Web.AlbumService.AlbumDetailsModel GetById(System.Guid id) {
+            return base.Channel.GetById(id);
         }
         
-        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumDetailsModel> GetAlbumAsync(System.Guid id) {
-            return base.Channel.GetAlbumAsync(id);
+        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.AlbumDetailsModel> GetByIdAsync(System.Guid id) {
+            return base.Channel.GetByIdAsync(id);
         }
         
-        public System.Guid AddAlbum(Musicalog.Web.AlbumService.CreateAlbumModel model) {
-            return base.Channel.AddAlbum(model);
+        public Musicalog.Web.AlbumService.CreateAlbumResultModel Create(Musicalog.Web.AlbumService.CreateAlbumRequestModel model) {
+            return base.Channel.Create(model);
         }
         
-        public System.Threading.Tasks.Task<System.Guid> AddAlbumAsync(Musicalog.Web.AlbumService.CreateAlbumModel model) {
-            return base.Channel.AddAlbumAsync(model);
+        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.CreateAlbumResultModel> CreateAsync(Musicalog.Web.AlbumService.CreateAlbumRequestModel model) {
+            return base.Channel.CreateAsync(model);
+        }
+        
+        public Musicalog.Web.AlbumService.CreateAlbumRequestModel GetDefaultCreateModel() {
+            return base.Channel.GetDefaultCreateModel();
+        }
+        
+        public System.Threading.Tasks.Task<Musicalog.Web.AlbumService.CreateAlbumRequestModel> GetDefaultCreateModelAsync() {
+            return base.Channel.GetDefaultCreateModelAsync();
         }
     }
 }

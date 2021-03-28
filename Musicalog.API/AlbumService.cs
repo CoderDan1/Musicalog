@@ -10,21 +10,27 @@ namespace Musicalog.API
 {
     public class AlbumService : IAlbumService
     {
-        private readonly IQueryable<Album> albums = new List<Album>()
+        private static readonly IQueryable<Artist> artists = new List<Artist>()
+        {
+            new Artist()
+            {
+                Name = "Ed Sheeran",
+                Id = Guid.NewGuid(),
+                Label = new Label()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Dan Scott Records"
+                }
+            }
+        }
+        .AsQueryable();
+
+        private static readonly IQueryable<Album> albums = new List<Album>()
         {
             new Album()
             {
                 Id = Guid.Parse("0fff7552-0db4-4f5d-baf3-e5a5833b211c"),
-                Artist = new Artist()
-                {
-                    Name = "Ed Sheeran",
-                    Id = Guid.NewGuid(),
-                    Label = new Label()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Dan Scott Records"
-                    }
-                },
+                Artist = artists.First(),
                 Name = "Shape of You",
                 Stock = 100,
                 Type = AlbumType.CD
@@ -38,21 +44,23 @@ namespace Musicalog.API
             mapper = new AlbumMapper();
         }
 
-        public Guid AddAlbum(CreateAlbumModel model)
-        {
-            return Guid.NewGuid();
-        }
+        public CreateAlbumResultModel Create(CreateAlbumRequestModel model) =>
+            new CreateAlbumResultModel()
+            {
+                Success = true,
+                Message = $"Successfully created album {model.Name} for {artists.Single(x => x.Id == model.ArtistId).Name}"
+            };
 
-        public AlbumDetailsModel GetAlbum(Guid id)
+        public AlbumDetailsModel GetById(Guid id)
         {
-            var result = albums.FirstOrDefault(x => x.Id == id);
+            var result = albums.Single(x => x.Id == id);
             if (result == null)
                 return null;
 
             return mapper.ToDetailModel(result);
         }
 
-        public AlbumListModel GetAlbums(int page, int take, string sort, SortDirection direction)
+        public AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, SortDirection direction)
         {
             var sorted = string.IsNullOrWhiteSpace(sort) ? albums : albums.Sort(sort, direction);
             var pagedList = sorted.Select(x => mapper.ToListModel(x))
@@ -67,5 +75,18 @@ namespace Musicalog.API
                 SortDirection = direction
             };
         }
+
+        public CreateAlbumRequestModel GetDefaultCreateModel() => new CreateAlbumRequestModel()
+        {
+            AlbumType = AlbumType.CD,
+            ArtistId = Guid.Empty,
+            Artists = artists.Select(x => new ArtistListItemModel()
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToArray(),
+            Name = string.Empty,
+            Stock = 0
+        };
     }
 }

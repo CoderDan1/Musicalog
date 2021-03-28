@@ -9,20 +9,40 @@
         <strong>Album Details</strong>
     </div>
     <div class="card-body">
-        <dl>
-            <dt>Album Name</dt>
-            <dd>@Model.Name</dd>
-            <dt>Artist</dt>
-            <dd>@Model.Artist</dd>
-            <dt>Label</dt>
-            <dd>@Model.Label</dd>
-            <dt>Album Type</dt>
-            <dd>@Model.Type</dd>
-            <dt>Stock</dt>
-            <dd>@Model.Stock</dd>
-        </dl>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <label>Album Name</label>
+                <p>@Model.Name</p>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <label>Album Type</label>
+                <p>@Model.Type</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <label class="form-label fw-bold">Artist</label>
+                <p>@Model.Artist</p>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <label>Label</label>
+                <p>@Model.Label</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <label>Stock</label>
+                <p>@Model.Stock</p>
+            </div>
+        </div>
     </div>
-    <div class="card-footer">
+    <div class="card-footer text-right">
+        @using (Html.BeginForm("Delete", "Albums", FormMethod.Post, new { @class = "d-inline" }))
+        {
+            @Html.Hidden("Id", Model.Id)
+            <button type="submit" class="btn btn-danger">Delete</button>
+        }
+        <button data-navigate="@Url.Action("Edit", "Albums", new { Id = Model.Id })" class="btn btn-success">Edit</button>
     </div>
 </div>
 

@@ -1,4 +1,4 @@
-﻿using Musicalog.Web.Core.Services.Album;
+﻿using Musicalog.Web.Modules;
 using Ninject;
 using Ninject.Web.Common.WebHost;
 using System.Web.Mvc;

@@ -8,6 +8,14 @@
     ViewBag.Title = "All Albums";
 }
 
+@if (!string.IsNullOrEmpty(Model.SuccessMessage)) 
+{
+<div class="alert alert-success">
+    <h4 class="alert-heading">Well done!</h4>
+    @Model.SuccessMessage
+</div>
+}
+
 <div class="card">
     <div class="card-header">
         <strong>@(((Model.Page - 1) * Model.Page) + 1) - @(((Model.Page) * Model.Page)) Albums of @Model.Albums.TotalItemCount</strong>
@@ -33,7 +41,7 @@
                         <td>@album.Stock</td>
                         <td>@album.Type</td>
                         <td>
-                            <button type="button" class="edit btn btn-success" data-id="@album.Id">Edit</button>
+                            <button type="button" class="edit btn btn-success" data-navigate="@Url.Action("Edit", "Albums", new { Id = album.Id })">Edit</button>
                         </td>
                         <td>
                             @using (Html.BeginForm("Delete", "Home", FormMethod.Post))
@@ -48,7 +56,7 @@
         </table>
     </div>
     <div class="card-footer">
-        <button id="addAlbum" class="btn btn-success float-right">Add Album</button>
+        <button id="addAlbum" class="btn btn-primary float-right" data-navigate="@Url.Action("Create", "Albums")">Add Album</button>
     </div>
 </div>
 

@@ -3,7 +3,7 @@
   <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" />
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:element name="GetAlbums">
+  <xs:element name="GetAllPagedAndSorted">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="page" type="xs:int" />
@@ -13,38 +13,50 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAlbumsResponse">
+  <xs:element name="GetAllPagedAndSortedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="GetAlbumsResult" nillable="true" type="q2:AlbumListModel" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="GetAllPagedAndSortedResult" nillable="true" type="q2:AlbumListModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAlbum">
+  <xs:element name="GetById">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q3:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetAlbumResponse">
+  <xs:element name="GetByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="GetAlbumResult" nillable="true" type="q4:AlbumDetailsModel" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="GetByIdResult" nillable="true" type="q4:AlbumDetailsModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddAlbum">
+  <xs:element name="Create">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="model" nillable="true" type="q5:CreateAlbumModel" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="model" nillable="true" type="q5:CreateAlbumRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddAlbumResponse">
+  <xs:element name="CreateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="AddAlbumResult" type="q6:guid" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="CreateResult" nillable="true" type="q6:CreateAlbumResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultCreateModel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultCreateModelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" minOccurs="0" name="GetDefaultCreateModelResult" nillable="true" type="q7:CreateAlbumRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

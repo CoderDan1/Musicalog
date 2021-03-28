@@ -9,12 +9,15 @@ namespace Musicalog.API
     public interface IAlbumService
     {
         [OperationContract]
-        AlbumListModel GetAlbums(int page, int take, string sort, SortDirection direction);
+        AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, SortDirection direction);
 
         [OperationContract]
-        AlbumDetailsModel GetAlbum(Guid id);
+        AlbumDetailsModel GetById(Guid id);
 
         [OperationContract]
-        Guid AddAlbum(CreateAlbumModel model);
+        CreateAlbumResultModel Create(CreateAlbumRequestModel model);
+
+        [OperationContract]
+        CreateAlbumRequestModel GetDefaultCreateModel();
     }
 }

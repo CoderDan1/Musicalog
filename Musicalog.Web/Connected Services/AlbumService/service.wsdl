@@ -7,44 +7,55 @@
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/Musicalog.API.Models" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/PagedList" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IAlbumService_GetAlbums_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlbums" />
+  <wsdl:message name="IAlbumService_GetAllPagedAndSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPagedAndSorted" />
   </wsdl:message>
-  <wsdl:message name="IAlbumService_GetAlbums_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlbumsResponse" />
+  <wsdl:message name="IAlbumService_GetAllPagedAndSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPagedAndSortedResponse" />
   </wsdl:message>
-  <wsdl:message name="IAlbumService_GetAlbum_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlbum" />
+  <wsdl:message name="IAlbumService_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetById" />
   </wsdl:message>
-  <wsdl:message name="IAlbumService_GetAlbum_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAlbumResponse" />
+  <wsdl:message name="IAlbumService_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="IAlbumService_AddAlbum_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddAlbum" />
+  <wsdl:message name="IAlbumService_Create_InputMessage">
+    <wsdl:part name="parameters" element="tns:Create" />
   </wsdl:message>
-  <wsdl:message name="IAlbumService_AddAlbum_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddAlbumResponse" />
+  <wsdl:message name="IAlbumService_Create_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlbumService_GetDefaultCreateModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultCreateModel" />
+  </wsdl:message>
+  <wsdl:message name="IAlbumService_GetDefaultCreateModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultCreateModelResponse" />
   </wsdl:message>
   <wsdl:portType name="IAlbumService">
-    <wsdl:operation name="GetAlbums">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetAlbums" message="tns:IAlbumService_GetAlbums_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/GetAlbumsResponse" message="tns:IAlbumService_GetAlbums_OutputMessage" />
+    <wsdl:operation name="GetAllPagedAndSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted" message="tns:IAlbumService_GetAllPagedAndSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse" message="tns:IAlbumService_GetAllPagedAndSorted_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAlbum">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetAlbum" message="tns:IAlbumService_GetAlbum_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/GetAlbumResponse" message="tns:IAlbumService_GetAlbum_OutputMessage" />
+    <wsdl:operation name="GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetById" message="tns:IAlbumService_GetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/GetByIdResponse" message="tns:IAlbumService_GetById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddAlbum">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/AddAlbum" message="tns:IAlbumService_AddAlbum_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/AddAlbumResponse" message="tns:IAlbumService_AddAlbum_OutputMessage" />
+    <wsdl:operation name="Create">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/Create" message="tns:IAlbumService_Create_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/CreateResponse" message="tns:IAlbumService_Create_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultCreateModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel" message="tns:IAlbumService_GetDefaultCreateModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse" message="tns:IAlbumService_GetDefaultCreateModel_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAlbumService" type="tns:IAlbumService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetAlbums">
-      <soap:operation soapAction="http://tempuri.org/IAlbumService/GetAlbums" style="document" />
+    <wsdl:operation name="GetAllPagedAndSorted">
+      <soap:operation soapAction="http://tempuri.org/IAlbumService/GetAllPagedAndSorted" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -52,8 +63,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAlbum">
-      <soap:operation soapAction="http://tempuri.org/IAlbumService/GetAlbum" style="document" />
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/IAlbumService/GetById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -61,8 +72,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddAlbum">
-      <soap:operation soapAction="http://tempuri.org/IAlbumService/AddAlbum" style="document" />
+    <wsdl:operation name="Create">
+      <soap:operation soapAction="http://tempuri.org/IAlbumService/Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultCreateModel">
+      <soap:operation soapAction="http://tempuri.org/IAlbumService/GetDefaultCreateModel" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

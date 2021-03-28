@@ -10,12 +10,14 @@ namespace Musicalog.API.Models
         [DataMember]
         public PagedList<AlbumListItemModel> Albums { get; set; }
         [DataMember]
-        public int Page { get; set; }
+        public int Page { get; set; } = 1;
         [DataMember]
-        public int PageSize { get; set; }
+        public int PageSize { get; set; } = 10;
         [DataMember]
-        public string Sort { get; set; }
+        public string Sort { get; set; } = nameof(Album.Name);
         [DataMember]
-        public SortDirection SortDirection { get; set; }
+        public SortDirection SortDirection { get; set; } = SortDirection.Descending;
+        [DataMember]
+        public string SuccessMessage { get; set; }
     }
 }

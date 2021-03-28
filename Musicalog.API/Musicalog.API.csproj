@@ -55,7 +55,9 @@
     <Compile Include="Models\AlbumDetailsModel.cs" />
     <Compile Include="Models\AlbumListItemModel.cs" />
     <Compile Include="Models\AlbumListModel.cs" />
-    <Compile Include="Models\CreateAlbumModel.cs" />
+    <Compile Include="Models\ArtistListItemModel.cs" />
+    <Compile Include="Models\CreateAlbumRequestModel.cs" />
+    <Compile Include="Models\CreateAlbumResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

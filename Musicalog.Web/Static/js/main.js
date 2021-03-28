@@ -18,6 +18,15 @@
     document.addEventListener("DOMContentLoaded", function () {
         randomizeHeaderColour();
         setInterval(randomizeHeaderColour, 1500);
+
+        document.querySelectorAll("[data-navigate]").forEach(function (navButton) {
+            navButton.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                window.location = e.currentTarget.dataset.navigate;
+            });
+        })
     })
 
 })();
