@@ -201,6 +201,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Albums\List.cshtml" />
     <Content Include="Views\Albums\Create.cshtml" />
+    <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
