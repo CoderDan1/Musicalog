@@ -2,7 +2,7 @@
 
 namespace Musicalog.Service.Handlers.Interfaces
 {
-    public interface IDeleteAlbumRequestHandler : IRequestHandler<DeleteAlbumRequestModel, DeleteAlbumResultModel>
+    public interface IDeleteAlbumRequestHandler : IRequestHandler<DeleteAlbumRequestModel, ActionResultModel>
     {
     }
 }

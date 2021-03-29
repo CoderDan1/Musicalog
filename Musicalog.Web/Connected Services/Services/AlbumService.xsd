@@ -12,49 +12,77 @@
   <xs:element name="CreateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="CreateResult" nillable="true" type="q2:CreateAlbumResultModel" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="CreateResult" nillable="true" type="q2:ActionResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Edit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="model" nillable="true" type="q3:EditAlbumRequestModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="EditResult" nillable="true" type="q4:ActionResultModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDetails">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q3:guid" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q5:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDetailsResult" nillable="true" type="q4:AlbumDetailsResultModel" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDetailsResult" nillable="true" type="q6:AlbumDetailsResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="request" nillable="true" type="q7:EditModelDetailsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="EditDetailsResult" nillable="true" type="q8:EditAlbumRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Delete">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q5:guid" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q9:guid" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="DeleteResult" nillable="true" type="q6:DeleteAlbumResultModel" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="DeleteResult" nillable="true" type="q10:ActionResultModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="List">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="request" nillable="true" type="q7:AlbumListRequestModel" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="request" nillable="true" type="q11:AlbumListRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="ListResult" nillable="true" type="q8:AlbumListResultModel" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="ListResult" nillable="true" type="q12:AlbumListResultModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -66,7 +94,7 @@
   <xs:element name="GetDefaultCreateModelResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDefaultCreateModelResult" nillable="true" type="q9:CreateAlbumRequestModel" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDefaultCreateModelResult" nillable="true" type="q13:CreateAlbumRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -8,7 +8,8 @@ namespace Musicalog.Data.Repositories.Interfaces
     {
         IQueryable<T> All();
         T GetById(Guid id);
-        Task Add(T model);
-        Task Remove(Guid id);
+        Task AddAsync(T model);
+        Task RemoveAsync(Guid id);
+        Task SaveChangesAsync();
     }
 }

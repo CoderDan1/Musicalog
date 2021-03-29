@@ -2,7 +2,7 @@
 
 namespace Musicalog.Service.Handlers.Interfaces
 {
-    public interface ICreateAlbumRequestHandler : IRequestHandler<CreateAlbumRequestModel, CreateAlbumResultModel>
+    public interface ICreateAlbumRequestHandler : IRequestHandler<CreateAlbumRequestModel, ActionResultModel>
     {
     }
 }

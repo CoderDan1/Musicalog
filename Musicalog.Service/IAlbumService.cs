@@ -10,13 +10,19 @@ namespace Musicalog.Service
     public interface IAlbumService
     {
         [OperationContract]
-        Task<CreateAlbumResultModel> CreateAsync(CreateAlbumRequestModel model);
+        Task<ActionResultModel> CreateAsync(CreateAlbumRequestModel model);
+
+        [OperationContract]
+        Task<ActionResultModel> EditAsync(EditAlbumRequestModel model);
 
         [OperationContract]
         Task<AlbumDetailsResultModel> GetDetailsAsync(Guid id);
 
         [OperationContract]
-        Task<DeleteAlbumResultModel> DeleteAsync(Guid id);
+        Task<EditAlbumRequestModel> EditDetailsAsync(EditModelDetailsRequest request);
+
+        [OperationContract]
+        Task<ActionResultModel> DeleteAsync(Guid id);
 
         [OperationContract]
         Task<AlbumListResultModel> ListAsync(AlbumListRequestModel request);

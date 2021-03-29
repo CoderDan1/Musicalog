@@ -15,10 +15,13 @@ namespace Musicalog.Service.Modules
             Bind<IAlbumsRepository>().To<AlbumsRepository>().InTransientScope();
             Bind<IArtistsRepository>().To<ArtistsRepository>().InTransientScope();
             Bind<ILabelsRepository>().To<LabelsRepository>().InTransientScope();
+
             Bind<ICreateAlbumRequestHandler>().To<CreateAlbumRequestHandler>();
             Bind<IDeleteAlbumRequestHandler>().To<DeleteAlbumRequestHandler>();
             Bind<IListAlbumsRequestHandler>().To<ListAlbumsRequestHandler>();
             Bind<IAlbumDetailsRequestHandler>().To<AlbumDetailsRequestHandler>();
+            Bind<IEditAlbumRequestHandler>().To<EditAlbumRequestHandler>();
+            Bind<IEditModelDetailsRequestHandler>().To<EditModelDetailsRequestHandler>();
         }
     }
 }

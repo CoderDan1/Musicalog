@@ -28,7 +28,6 @@
     <MetadataFile FileName="AlbumService.disco" MetadataType="Disco" ID="21596d6b-42ad-4579-9e7c-4d2d0b0bb979" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?disco" />
     <MetadataFile FileName="AlbumService3.xsd" MetadataType="Schema" ID="0f6a6a5d-151a-4e54-bf03-2f2aa037272e" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd1" />
     <MetadataFile FileName="AlbumService.wsdl" MetadataType="Wsdl" ID="6cc53609-7862-4c6b-8b75-2ae9fd3c95a6" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?wsdl" />
-    <MetadataFile FileName="AlbumService4.xsd" MetadataType="Schema" ID="c8798b07-4367-4d38-b37a-15a2118347dc" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd5" />
     <MetadataFile FileName="AlbumService5.xsd" MetadataType="Schema" ID="ea04e9ff-ab0d-42ba-981e-269f3e77ee5a" SourceId="1" SourceUrl="http://localhost:55540/AlbumService.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>

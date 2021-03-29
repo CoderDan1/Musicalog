@@ -16,16 +16,16 @@ namespace Musicalog.Service.Handlers
             this.repository = repository;
         }
 
-        public Task<DeleteAlbumResultModel> Handle(DeleteAlbumRequestModel request)
+        public Task<ActionResultModel> Handle(DeleteAlbumRequestModel request)
         {
             var album = repository.GetById(request.Id);
 
             var artist = album.Artist.Name;
             var albumName = album.Name;
 
-            repository.Remove(request.Id);
+            repository.RemoveAsync(request.Id);
 
-            return Task.FromResult(new DeleteAlbumResultModel()
+            return Task.FromResult(new ActionResultModel()
             {
                 Message = $"Successfully deleted {artist}'s Album \"{albumName}\""
             });

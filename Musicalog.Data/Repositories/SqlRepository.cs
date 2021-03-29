@@ -20,22 +20,21 @@ namespace Musicalog.Data.Repositories
 
         public IQueryable<T> All() => Context.Set<T>().AsQueryable();
 
-        public T GetById(Guid id)
-        {
-            return Context.Set<T>().Find(id);
-        }
+        public T GetById(Guid id) => Context.Set<T>().Find(id);
 
-        public Task Add(T model)
+        public Task AddAsync(T model)
         {
             Context.Set<T>().Add(model);
             return Context.SaveChangesAsync();
         }
 
-        public Task Remove(Guid id)
+        public Task RemoveAsync(Guid id)
         {
             var model = GetById(id);
             Context.Set<T>().Remove(model);
             return Context.SaveChangesAsync();
         }
+
+        public Task SaveChangesAsync() => Context.SaveChangesAsync();
     }
 }

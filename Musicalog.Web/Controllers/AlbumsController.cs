@@ -10,14 +10,17 @@ namespace Musicalog.Web.Controllers
     {
         private readonly IAlbumService albumService;
         private readonly ICreateAlbumModelAdapter createModelAdapter;
+        private readonly IEditAlbumModelAdapter editModelAdapter;
 
         public AlbumsController(
             IAlbumService albumService,
-            ICreateAlbumModelAdapter createModelAdapter
+            ICreateAlbumModelAdapter createModelAdapter,
+            IEditAlbumModelAdapter editModelAdapter
         )
         {
             this.albumService = albumService;
             this.createModelAdapter = createModelAdapter;
+            this.editModelAdapter = editModelAdapter;
         }
 
         [HttpGet]
@@ -49,10 +52,7 @@ namespace Musicalog.Web.Controllers
         {
             var result = await albumService.CreateAsync(createModelAdapter.ToService(model));
 
-            return RedirectToAction("List", new AlbumListRequestModel()
-            {
-                SuccessMessage = result.Message
-            });
+            return RedirectToAction("Details", new { Id = result.EntityId });
         }
 
         [HttpPost]
@@ -67,10 +67,18 @@ namespace Musicalog.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Edit()
+        public async Task<ActionResult> Edit(Guid id)
         {
-            //var serviceModel = await albumService.Get
-            return View();
+            var editModel = await albumService.EditDetailsAsync(new EditModelDetailsRequest() { Id = id });
+            return View(editModelAdapter.FromService(editModel));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit(Models.EditAlbumRequestModel model)
+        {
+            var result = await albumService.EditAsync(editModelAdapter.ToService(model));
+
+            return RedirectToAction("Details", new { model.Id });
         }
     }
 }

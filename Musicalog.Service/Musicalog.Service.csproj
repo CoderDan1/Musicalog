@@ -103,6 +103,10 @@
     <Compile Include="Handlers\AlbumDetailsRequestHandler.cs" />
     <Compile Include="Handlers\CreateAlbumRequestHandler.cs" />
     <Compile Include="Handlers\DeleteAlbumRequestHandler.cs" />
+    <Compile Include="Handlers\EditAlbumRequestHandler.cs" />
+    <Compile Include="Handlers\EditModelDetailsRequestHandler.cs" />
+    <Compile Include="Handlers\Interfaces\IEditModelDetailsRequestHandler.cs" />
+    <Compile Include="Handlers\Interfaces\IEditAlbumRequestHandler.cs" />
     <Compile Include="Handlers\Interfaces\IListAlbumsRequestHandler.cs" />
     <Compile Include="Handlers\Interfaces\IDeleteAlbumRequestHandler.cs" />
     <Compile Include="Handlers\Interfaces\ICreateAlbumRequestHandler.cs" />
@@ -116,10 +120,12 @@
     <Compile Include="Models\AlbumListResultModel.cs" />
     <Compile Include="Models\ArtistListItemModel.cs" />
     <Compile Include="Models\CreateAlbumRequestModel.cs" />
-    <Compile Include="Models\CreateAlbumResultModel.cs" />
+    <Compile Include="Models\ActionResultModel.cs" />
     <Compile Include="Models\DeleteAlbumRequestModel.cs" />
     <Compile Include="Models\DeleteAlbumResultModel.cs" />
     <Compile Include="Models\AlbumListRequestModel.cs" />
+    <Compile Include="Models\EditAlbumRequestModel.cs" />
+    <Compile Include="Models\EditModelDetailsRequest.cs" />
     <Compile Include="Modules\AlbumsModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AlbumService.svc.cs">

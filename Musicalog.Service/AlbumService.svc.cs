@@ -15,13 +15,17 @@ namespace Musicalog.Service
         private readonly IDeleteAlbumRequestHandler deleteAlbumRequestHandler;
         private readonly IListAlbumsRequestHandler listAlbumsRequestHandler;
         private readonly ICreateAlbumRequestHandler createAlbumRequestHandler;
+        private readonly IEditAlbumRequestHandler editAlbumRequestHandler;
+        private readonly IEditModelDetailsRequestHandler editModelDetailsRequestHandler;
 
         public AlbumService(
             IArtistsRepository artistRepository,
             IAlbumDetailsRequestHandler albumDetailsRequestHandler,
             IDeleteAlbumRequestHandler deleteAlbumRequestHandler,
             IListAlbumsRequestHandler listAlbumsRequestHandler,
-            ICreateAlbumRequestHandler createAlbumRequestHandler
+            ICreateAlbumRequestHandler createAlbumRequestHandler,
+            IEditAlbumRequestHandler editAlbumRequestHandler,
+            IEditModelDetailsRequestHandler editModelDetailsRequestHandler
         )
         {
             this.artistRepository = artistRepository;
@@ -29,19 +33,27 @@ namespace Musicalog.Service
             this.deleteAlbumRequestHandler = deleteAlbumRequestHandler;
             this.listAlbumsRequestHandler = listAlbumsRequestHandler;
             this.createAlbumRequestHandler = createAlbumRequestHandler;
+            this.editAlbumRequestHandler = editAlbumRequestHandler;
+            this.editModelDetailsRequestHandler = editModelDetailsRequestHandler;
         }
 
-        public Task<CreateAlbumResultModel> CreateAsync(CreateAlbumRequestModel model) =>
+        public Task<ActionResultModel> CreateAsync(CreateAlbumRequestModel model) =>
             createAlbumRequestHandler.Handle(model);
 
         public Task<AlbumDetailsResultModel> GetDetailsAsync(Guid id) =>
             albumDetailsRequestHandler.Handle(new AlbumDetailsRequestModel() { Id = id });
 
-        public Task<DeleteAlbumResultModel> DeleteAsync(Guid id) =>
+        public Task<ActionResultModel> DeleteAsync(Guid id) =>
             deleteAlbumRequestHandler.Handle(new DeleteAlbumRequestModel() { Id = id });
 
         public Task<AlbumListResultModel> ListAsync(AlbumListRequestModel request) =>
             listAlbumsRequestHandler.Handle(request);
+
+        public Task<ActionResultModel> EditAsync(EditAlbumRequestModel request) => 
+            editAlbumRequestHandler.Handle(request);
+
+        public Task<EditAlbumRequestModel> EditDetailsAsync(EditModelDetailsRequest request) =>
+            editModelDetailsRequestHandler.Handle(request);
 
         public CreateAlbumRequestModel GetDefaultCreateModel() => new CreateAlbumRequestModel()
         {

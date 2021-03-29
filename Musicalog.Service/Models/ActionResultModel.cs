@@ -1,15 +1,16 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Musicalog.Service.Models
 {
     [DataContract]
-    public class CreateAlbumResultModel
+    public class ActionResultModel
     {
         [DataMember]
         public bool Success { get; set; }
         [DataMember]
-        public string[] Errors { get; set; }
-        [DataMember]
         public string Message { get; set; }
+        [DataMember]
+        public Guid EntityId { get; set; }
     }
 }

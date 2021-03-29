@@ -20,28 +20,31 @@ namespace Musicalog.Service.Handlers
             this.artistsRepository = artistsRepository;
         }
 
-        public async Task<CreateAlbumResultModel> Handle(CreateAlbumRequestModel model)
+        public async Task<ActionResultModel> Handle(CreateAlbumRequestModel model)
         {
             var artist = artistsRepository.GetById(model.ArtistId);
 
             if (artist == null)
-                return new CreateAlbumResultModel()
+                return new ActionResultModel()
                 {
                     Success = false,
                     Message = "Artist not found"
                 };
 
-            await albumsRepository.Add(new Album()
+            var album = new Album()
             {
                 ArtistId = artist.Id,
                 Name = model.Name,
                 Stock = model.Stock,
                 Type = model.AlbumType
-            });
+            };
 
-            return new CreateAlbumResultModel()
+            await albumsRepository.AddAsync(album);
+
+            return new ActionResultModel()
             {
                 Success = true,
+                EntityId = album.Id,
                 Message = $"Successfully created album \"{model.Name}\" for {artist.Name}"
             };
         }

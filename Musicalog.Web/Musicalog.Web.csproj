@@ -147,7 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\CreateAlbumModelAdapter.cs" />
+    <Compile Include="Adapters\EditAlbumModelAdapter.cs" />
     <Compile Include="Adapters\ICreateAlbumModelAdapter.cs" />
+    <Compile Include="Adapters\IEditAlbumModelAdapter.cs" />
     <Compile Include="AppSettings.cs" />
     <Compile Include="Connected Services\Services\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -159,6 +161,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CreateAlbumRequestModel.cs" />
+    <Compile Include="Models\EditAlbumRequestModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modules\AlbumModule.cs" />
   </ItemGroup>
@@ -169,16 +172,16 @@
     <Content Include="Connected Services\Services\Musicalog.Web.Services.CreateAlbumRequestModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Services\Musicalog.Web.Services.CreateAlbumResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\Services\Musicalog.Web.Services.DeleteAlbumResultModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumDetailsResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumListResultModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.ActionResultModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.EditAlbumRequestModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\Services\Reference.svcmap">
@@ -202,6 +205,7 @@
     <Content Include="Views\Albums\List.cshtml" />
     <Content Include="Views\Albums\Create.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Albums\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -218,9 +222,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Services\AlbumService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\Services\AlbumService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Services\AlbumService5.xsd">

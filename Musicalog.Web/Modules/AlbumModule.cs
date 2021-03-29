@@ -15,6 +15,10 @@ namespace Musicalog.Web.Modules
             Bind<ICreateAlbumModelAdapter>()
                 .To<CreateAlbumModelAdapter>()
                 .InSingletonScope();
+
+            Bind<IEditAlbumModelAdapter>()
+                .To<EditAlbumModelAdapter>()
+                .InSingletonScope();
         }
     }
 }
