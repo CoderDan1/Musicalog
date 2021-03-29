@@ -34,6 +34,12 @@
   <wsdl:message name="IAlbumService_GetDefaultCreateModel_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDefaultCreateModelResponse" />
   </wsdl:message>
+  <wsdl:message name="IAlbumService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IAlbumService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IAlbumService">
     <wsdl:operation name="GetAllPagedAndSorted">
       <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted" message="tns:IAlbumService_GetAllPagedAndSorted_InputMessage" />
@@ -50,6 +56,10 @@
     <wsdl:operation name="GetDefaultCreateModel">
       <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel" message="tns:IAlbumService_GetDefaultCreateModel_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse" message="tns:IAlbumService_GetDefaultCreateModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAlbumService/Delete" message="tns:IAlbumService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAlbumService/DeleteResponse" message="tns:IAlbumService_Delete_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IAlbumService" type="tns:IAlbumService">
@@ -83,6 +93,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDefaultCreateModel">
       <soap:operation soapAction="http://tempuri.org/IAlbumService/GetDefaultCreateModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IAlbumService/Delete" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

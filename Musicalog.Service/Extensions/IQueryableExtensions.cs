@@ -1,4 +1,5 @@
 ﻿using Musicalog.Data.Models;
+using System;
 using System.Linq;
 
 namespace Musicalog.Service.Extensions
@@ -6,12 +7,10 @@ namespace Musicalog.Service.Extensions
     public static class IQueryableExtensions
     {
 
-        private static object OrderByPredicate<T>(T x, string sort) => x.GetType().GetProperty(sort).GetValue(x, null);
-
-        public static IQueryable<T> Sort<T>(this IQueryable<T> queryable, string sort, SortDirection direction) where T : class =>
+        public static IQueryable<T> Sort<T, TKey>(this IQueryable<T> queryable, SortDirection direction, Func<T, TKey> orderFunction) where T : class =>
             direction == SortDirection.Ascending ?
-            queryable.OrderBy(x => OrderByPredicate(x, sort)) :
-            queryable.OrderByDescending(x => OrderByPredicate(x, sort));
+            queryable.OrderBy(orderFunction).AsQueryable() :
+            queryable.OrderByDescending(orderFunction).AsQueryable();
 
     }
 }

@@ -11,42 +11,12 @@ namespace Musicalog.Service
 {
     public class AlbumService : IAlbumService
     {
-        //private static readonly IQueryable<Artist> artists = new List<Artist>()
-        //{
-        //    new Artist()
-        //    {
-        //        Name = "Ed Sheeran",
-        //        Id = Guid.NewGuid(),
-        //        Label = new Label()
-        //        {
-        //            Id = Guid.NewGuid(),
-        //            Name = "Dan Scott Records"
-        //        }
-        //    }
-        //}
-        //.AsQueryable();
-
-        //private static readonly IQueryable<Album> albums = new List<Album>()
-        //{
-        //    new Album()
-        //    {
-        //        Id = Guid.Parse("0fff7552-0db4-4f5d-baf3-e5a5833b211c"),
-        //        Artist = artists.First(),
-        //        Name = "Shape of You",
-        //        Stock = 100,
-        //        Type = AlbumType.CD
-        //    }
-        //}.AsQueryable();
-
-        private readonly IAlbumMapper mapper;
         private readonly AlbumsContext context;
 
         public AlbumService(
-            IAlbumMapper mapper,
             AlbumsContext context
         )
         {
-            this.mapper = mapper;
             this.context = context;
         }
 
@@ -65,7 +35,7 @@ namespace Musicalog.Service
             return new CreateAlbumResultModel()
             {
                 Success = true,
-                Message = $"Successfully created album {model.Name} for {context.Artists.Single(x => x.Id == model.ArtistId).Name}"
+                Message = $"Successfully created album \"{model.Name}\" for {context.Artists.Single(x => x.Id == model.ArtistId).Name}"
             };
         }
 
@@ -78,7 +48,50 @@ namespace Musicalog.Service
             if (result == null)
                 return null;
 
-            return mapper.ToDetailModel(result);
+            return new AlbumDetailsModel
+            {
+                Artist = result.Artist.Name,
+                Label = result.Artist.Label.Name,
+                Id = result.Id,
+                Name = result.Name,
+                Stock = result.Stock,
+                Type = result.Type == AlbumType.CD ? "CD" : "Vinyl"
+            };
+        }
+
+        public DeleteAlbumResultModel Delete(Guid albumId)
+        {
+            var album = context.Albums
+                .Include(x => x.Artist)
+                .Single(x => x.Id == albumId);
+
+            var artist = album.Artist.Name;
+            var albumName = album.Name;
+
+            context.Albums.Remove(album);
+            context.SaveChanges();
+
+            return new DeleteAlbumResultModel()
+            {
+                Message = $"Successfully deleted {artist}'s Album \"{albumName}\""
+            };
+        }
+
+        private IQueryable<Album> GetSorted(string sort, SortDirection direction, IQueryable<Album> albums)
+        {
+            switch (sort)
+            {
+                default:
+                case "":
+                case nameof(Album.Artist):
+                    return albums.Sort(direction, x => x.Artist.Name);
+                case nameof(Album.Stock):
+                    return albums.Sort(direction, x => x.Stock);
+                case nameof(Album.Type):
+                    return albums.Sort(direction, x => x.Type);
+                case nameof(Album.Name):
+                    return albums.Sort(direction, x => x.Name);
+            }
         }
 
         public AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, SortDirection direction)
@@ -87,7 +100,7 @@ namespace Musicalog.Service
                 .Include(x => x.Artist.Label)
                 .OrderBy(x => x.Artist.Name);
 
-            var sorted = string.IsNullOrWhiteSpace(sort) ? albums : albums.Sort(sort, direction);
+            var sorted = string.IsNullOrWhiteSpace(sort) ? albums : GetSorted(sort, direction, albums);
 
             var pagedList = sorted.Select(x => new AlbumListItemModel()
             {

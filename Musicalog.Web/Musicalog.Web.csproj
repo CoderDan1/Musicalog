@@ -148,6 +148,7 @@
   <ItemGroup>
     <Compile Include="Adapters\CreateAlbumModelAdapter.cs" />
     <Compile Include="Adapters\ICreateAlbumModelAdapter.cs" />
+    <Compile Include="AppSettings.cs" />
     <Compile Include="Connected Services\Services\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +178,9 @@
     <Content Include="Connected Services\Services\Musicalog.Web.Services.CreateAlbumResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.DeleteAlbumResultModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\Services\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -192,7 +196,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

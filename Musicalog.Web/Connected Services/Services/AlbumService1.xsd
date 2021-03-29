@@ -74,4 +74,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CreateAlbumResultModel" nillable="true" type="tns:CreateAlbumResultModel" />
+  <xs:complexType name="DeleteAlbumResultModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteAlbumResultModel" nillable="true" type="tns:DeleteAlbumResultModel" />
 </xs:schema>

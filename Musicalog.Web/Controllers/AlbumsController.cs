@@ -24,7 +24,7 @@ namespace Musicalog.Web.Controllers
         public async Task<ActionResult> List(AlbumListModel request)
         {
             var safePage = request.Page < 1 ? 1 : request.Page;
-            var safePageSize = request.PageSize < 1 ? 10 : request.PageSize;
+            var safePageSize = request.PageSize < 1 ? AppSettings.PageSize : request.PageSize;
             var model = await albumService.GetAllPagedAndSortedAsync(safePage, safePageSize, request.Sort, request.SortDirection);
             model.SuccessMessage = request.SuccessMessage;
             return View(model);
@@ -48,6 +48,17 @@ namespace Musicalog.Web.Controllers
         public async Task<ActionResult> Create(Models.CreateAlbumRequestModel model)
         {
             var result = await albumService.CreateAsync(createModelAdapter.ToService(model));
+
+            return RedirectToAction("List", new AlbumListModel()
+            {
+                SuccessMessage = result.Message
+            });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var result = await albumService.DeleteAsync(id);
 
             return RedirectToAction("List", new AlbumListModel()
             {

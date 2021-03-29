@@ -635,6 +635,51 @@ namespace Musicalog.Web.Services {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DeleteAlbumResultModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
+    [System.SerializableAttribute()]
+    public partial class DeleteAlbumResultModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Services.IAlbumService")]
     public interface IAlbumService {
@@ -662,6 +707,12 @@ namespace Musicalog.Web.Services {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel", ReplyAction="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse")]
         System.Threading.Tasks.Task<Musicalog.Web.Services.CreateAlbumRequestModel> GetDefaultCreateModelAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Delete", ReplyAction="http://tempuri.org/IAlbumService/DeleteResponse")]
+        Musicalog.Web.Services.DeleteAlbumResultModel Delete(System.Guid albumId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Delete", ReplyAction="http://tempuri.org/IAlbumService/DeleteResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.Services.DeleteAlbumResultModel> DeleteAsync(System.Guid albumId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -721,6 +772,14 @@ namespace Musicalog.Web.Services {
         
         public System.Threading.Tasks.Task<Musicalog.Web.Services.CreateAlbumRequestModel> GetDefaultCreateModelAsync() {
             return base.Channel.GetDefaultCreateModelAsync();
+        }
+        
+        public Musicalog.Web.Services.DeleteAlbumResultModel Delete(System.Guid albumId) {
+            return base.Channel.Delete(albumId);
+        }
+        
+        public System.Threading.Tasks.Task<Musicalog.Web.Services.DeleteAlbumResultModel> DeleteAsync(System.Guid albumId) {
+            return base.Channel.DeleteAsync(albumId);
         }
     }
 }

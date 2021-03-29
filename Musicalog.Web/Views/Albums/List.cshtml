@@ -11,31 +11,37 @@
 @if (!string.IsNullOrEmpty(Model.SuccessMessage)) 
 {
 <div class="alert alert-success">
-    <h4 class="alert-heading">Well done!</h4>
     @Model.SuccessMessage
 </div>
 }
 
 <div class="card">
     <div class="card-header">
-        <strong>@(((Model.Page - 1) * Model.Page) + 1) - @(((Model.Page) * Model.Page)) Albums of @Model.Albums.TotalItemCount</strong>
+        <strong>@(((Model.Page - 1) * Model.PageSize) + 1) - @(Model.Page * Model.PageSize) Albums of @Model.Albums.TotalItemCount</strong>
     </div>
     <div class="card-body">
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th class="w-30">Name</th>
-                    <th class="w-30">Artist</th>
-                    <th class="w-10">Stock</th>
-                    <th class="w-10">Type</th>
+                    <th class="w-5">#</th>
+                    <th class="w-45" data-sort="Name">@(nameof(AlbumDetailsModel.Name)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-20" data-sort="Artist">@(nameof(AlbumDetailsModel.Artist)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-10" data-sort="Stock">@(nameof(AlbumDetailsModel.Stock)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-10" data-sort="Type">@(nameof(AlbumDetailsModel.Type)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
                     <th class="w-10">Edit</th>
                     <th class="w-10">Remove</th>
                 </tr>
             </thead>
             <tbody>
+                @{ 
+                    var albumIndex = 0;
+                }
                 @foreach (var album in Model.Albums)
                 {
+                    albumIndex = albumIndex + 1;
+                    
                     <tr>
+                        <td>@(albumIndex + (Model.PageSize * (Model.Page - 1)))</td>
                         <td><a href="albums/details/@album.Id">@album.Name</a></td>
                         <td>@album.Artist</td>
                         <td>@album.Stock</td>
@@ -44,7 +50,7 @@
                             <button type="button" class="edit btn btn-success" data-navigate="@Url.Action("Edit", "Albums", new { Id = album.Id })">Edit</button>
                         </td>
                         <td>
-                            @using (Html.BeginForm("Delete", "Home", FormMethod.Post))
+                            @using (Html.BeginForm("Delete", "Albums", FormMethod.Post))
                             {
                                 @Html.Hidden("Id", album.Id);
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -56,7 +62,44 @@
         </table>
     </div>
     <div class="card-footer">
-        <button id="addAlbum" class="btn btn-primary float-right" data-navigate="@Url.Action("Create", "Albums")">Add Album</button>
+        <div class="row">
+            <div class="col-lg-10">
+                <nav aria-label="pagination">
+                    <ul class="pagination">
+                        @{ 
+                            var backwardsDisabled = Model.Page <= 1;
+                        }
+                        <li class="page-item @(backwardsDisabled ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("List", "Albums", new { Sort = Model.Sort, Page = Model.Page - 1, PageSize = Model.PageSize, SortDirection = Model.SortDirection })" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        @for (var i = 0; i <= (Model.Albums.TotalItemCount - 1) / Model.PageSize; i++)
+                        {
+                            <li class="page-item @(Model.Page == (i + 1) ? "active" : "")">
+                                <a class="page-link"
+                                   href="@Url.Action("List", "Albums", new { Sort = Model.Sort, Page = i + 1, PageSize = Model.PageSize, SortDirection = Model.SortDirection })">
+                                    @(i + 1)
+                                </a>
+                            </li>
+                        }
+                        @{
+                            var forwardDisabled = Model.Page * Model.PageSize > Model.Albums.TotalItemCount - 1;
+                        }
+                        <li class="page-item @(forwardDisabled ? "disabled": "")">
+                            <a class="page-link"
+                               href="@Url.Action("List", "Albums", new { Sort = Model.Sort, Page = Model.Page + 1, PageSize = Model.PageSize, SortDirection = Model.SortDirection })"
+                               aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-2">
+                <button id="addAlbum" class="btn btn-primary float-right" data-navigate="@Url.Action("Create", "Albums")">Add Album</button>
+            </div>
+        </div>
     </div>
 </div>
 

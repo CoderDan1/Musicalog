@@ -19,5 +19,8 @@ namespace Musicalog.Service
 
         [OperationContract]
         CreateAlbumRequestModel GetDefaultCreateModel();
+
+        [OperationContract]
+        DeleteAlbumResultModel Delete(Guid albumId);
     }
 }
