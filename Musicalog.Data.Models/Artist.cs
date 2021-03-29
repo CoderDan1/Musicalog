@@ -5,11 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Musicalog.Data.Models
 {
-    public class Artist
+    public class Artist : Entity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
         [ForeignKey(nameof(Label))]
         public Guid LabelId { get; set; }
         [StringLength(250)]

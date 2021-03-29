@@ -166,12 +166,6 @@
     <None Include="Connected Services\Services\AlbumService.disco" />
     <None Include="Connected Services\Services\configuration91.svcinfo" />
     <None Include="Connected Services\Services\configuration.svcinfo" />
-    <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumDetailsModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumListModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\Services\Musicalog.Web.Services.CreateAlbumRequestModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -179,6 +173,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\Services\Musicalog.Web.Services.DeleteAlbumResultModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumDetailsResultModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\Services\Musicalog.Web.Services.AlbumListResultModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\Services\Reference.svcmap">

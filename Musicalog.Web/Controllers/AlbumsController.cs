@@ -21,11 +21,11 @@ namespace Musicalog.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> List(AlbumListModel request)
+        public async Task<ActionResult> List(AlbumListRequestModel request)
         {
-            var safePage = request.Page < 1 ? 1 : request.Page;
-            var safePageSize = request.PageSize < 1 ? AppSettings.PageSize : request.PageSize;
-            var model = await albumService.GetAllPagedAndSortedAsync(safePage, safePageSize, request.Sort, request.SortDirection);
+            request.Page = request.Page < 1 ? 1 : request.Page;
+            request.PageSize = request.PageSize < 1 ? AppSettings.PageSize : request.PageSize;
+            var model = await albumService.ListAsync(request);
             model.SuccessMessage = request.SuccessMessage;
             return View(model);
         }
@@ -33,7 +33,7 @@ namespace Musicalog.Web.Controllers
         [HttpGet]
         public async Task<ActionResult> Details(Guid? id)
         {
-            return View(await albumService.GetByIdAsync(id.Value));
+            return View(await albumService.GetDetailsAsync(id.Value));
         }
 
         [HttpGet]
@@ -49,7 +49,7 @@ namespace Musicalog.Web.Controllers
         {
             var result = await albumService.CreateAsync(createModelAdapter.ToService(model));
 
-            return RedirectToAction("List", new AlbumListModel()
+            return RedirectToAction("List", new AlbumListRequestModel()
             {
                 SuccessMessage = result.Message
             });
@@ -60,10 +60,17 @@ namespace Musicalog.Web.Controllers
         {
             var result = await albumService.DeleteAsync(id);
 
-            return RedirectToAction("List", new AlbumListModel()
+            return RedirectToAction("List", new AlbumListRequestModel()
             {
                 SuccessMessage = result.Message
             });
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Edit()
+        {
+            //var serviceModel = await albumService.Get
+            return View();
         }
     }
 }

@@ -2,6 +2,7 @@
 using Musicalog.Service.Models;
 using System;
 using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace Musicalog.Service
 {
@@ -9,18 +10,18 @@ namespace Musicalog.Service
     public interface IAlbumService
     {
         [OperationContract]
-        AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, SortDirection direction);
+        Task<CreateAlbumResultModel> CreateAsync(CreateAlbumRequestModel model);
 
         [OperationContract]
-        AlbumDetailsModel GetById(Guid id);
+        Task<AlbumDetailsResultModel> GetDetailsAsync(Guid id);
 
         [OperationContract]
-        CreateAlbumResultModel Create(CreateAlbumRequestModel model);
+        Task<DeleteAlbumResultModel> DeleteAsync(Guid id);
+
+        [OperationContract]
+        Task<AlbumListResultModel> ListAsync(AlbumListRequestModel request);
 
         [OperationContract]
         CreateAlbumRequestModel GetDefaultCreateModel();
-
-        [OperationContract]
-        DeleteAlbumResultModel Delete(Guid albumId);
     }
 }

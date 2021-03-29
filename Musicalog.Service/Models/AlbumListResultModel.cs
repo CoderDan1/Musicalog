@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Musicalog.Service.Models
 {
     [DataContract]
-    public class AlbumListModel
+    public class AlbumListResultModel
     {
         [DataMember]
         public PagedList<AlbumListItemModel> Albums { get; set; }

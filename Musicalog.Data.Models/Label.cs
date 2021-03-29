@@ -5,11 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Musicalog.Data.Models
 {
-    public class Label
+    public class Label : Entity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
         [StringLength(250)]
         public string Name { get; set; }
         public ICollection<Artist> Artists { get; set; }

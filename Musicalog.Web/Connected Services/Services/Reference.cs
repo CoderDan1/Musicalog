@@ -15,365 +15,6 @@ namespace Musicalog.Web.Services {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumListModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
-    [System.SerializableAttribute()]
-    public partial class AlbumListModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private PagedList.PagedList<Musicalog.Web.Services.AlbumListItemModel> AlbumsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PageSizeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SortField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Musicalog.Data.Models.SortDirection SortDirectionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SuccessMessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public PagedList.PagedList<Musicalog.Web.Services.AlbumListItemModel> Albums {
-            get {
-                return this.AlbumsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AlbumsField, value) != true)) {
-                    this.AlbumsField = value;
-                    this.RaisePropertyChanged("Albums");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Page {
-            get {
-                return this.PageField;
-            }
-            set {
-                if ((this.PageField.Equals(value) != true)) {
-                    this.PageField = value;
-                    this.RaisePropertyChanged("Page");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PageSize {
-            get {
-                return this.PageSizeField;
-            }
-            set {
-                if ((this.PageSizeField.Equals(value) != true)) {
-                    this.PageSizeField = value;
-                    this.RaisePropertyChanged("PageSize");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Sort {
-            get {
-                return this.SortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SortField, value) != true)) {
-                    this.SortField = value;
-                    this.RaisePropertyChanged("Sort");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Musicalog.Data.Models.SortDirection SortDirection {
-            get {
-                return this.SortDirectionField;
-            }
-            set {
-                if ((this.SortDirectionField.Equals(value) != true)) {
-                    this.SortDirectionField = value;
-                    this.RaisePropertyChanged("SortDirection");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SuccessMessage {
-            get {
-                return this.SuccessMessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SuccessMessageField, value) != true)) {
-                    this.SuccessMessageField = value;
-                    this.RaisePropertyChanged("SuccessMessage");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumListItemModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
-    [System.SerializableAttribute()]
-    public partial class AlbumListItemModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ArtistField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Artist {
-            get {
-                return this.ArtistField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtistField, value) != true)) {
-                    this.ArtistField = value;
-                    this.RaisePropertyChanged("Artist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Stock {
-            get {
-                return this.StockField;
-            }
-            set {
-                if ((this.StockField.Equals(value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumDetailsModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
-    [System.SerializableAttribute()]
-    public partial class AlbumDetailsModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ArtistField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Guid IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LabelField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StockField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Artist {
-            get {
-                return this.ArtistField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ArtistField, value) != true)) {
-                    this.ArtistField = value;
-                    this.RaisePropertyChanged("Artist");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Guid Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Label {
-            get {
-                return this.LabelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LabelField, value) != true)) {
-                    this.LabelField = value;
-                    this.RaisePropertyChanged("Label");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Stock {
-            get {
-                return this.StockField;
-            }
-            set {
-                if ((this.StockField.Equals(value) != true)) {
-                    this.StockField = value;
-                    this.RaisePropertyChanged("Stock");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Type {
-            get {
-                return this.TypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
-                    this.TypeField = value;
-                    this.RaisePropertyChanged("Type");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CreateAlbumRequestModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
     [System.SerializableAttribute()]
     public partial class CreateAlbumRequestModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -637,6 +278,131 @@ namespace Musicalog.Web.Services {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumDetailsResultModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
+    [System.SerializableAttribute()]
+    public partial class AlbumDetailsResultModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ArtistField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LabelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Artist {
+            get {
+                return this.ArtistField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArtistField, value) != true)) {
+                    this.ArtistField = value;
+                    this.RaisePropertyChanged("Artist");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Label {
+            get {
+                return this.LabelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LabelField, value) != true)) {
+                    this.LabelField = value;
+                    this.RaisePropertyChanged("Label");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DeleteAlbumResultModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
     [System.SerializableAttribute()]
     public partial class DeleteAlbumResultModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -680,21 +446,352 @@ namespace Musicalog.Web.Services {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumListRequestModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
+    [System.SerializableAttribute()]
+    public partial class AlbumListRequestModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Musicalog.Data.Models.SortDirection DirectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SortField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SuccessMessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Musicalog.Data.Models.SortDirection Direction {
+            get {
+                return this.DirectionField;
+            }
+            set {
+                if ((this.DirectionField.Equals(value) != true)) {
+                    this.DirectionField = value;
+                    this.RaisePropertyChanged("Direction");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Page {
+            get {
+                return this.PageField;
+            }
+            set {
+                if ((this.PageField.Equals(value) != true)) {
+                    this.PageField = value;
+                    this.RaisePropertyChanged("Page");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageSize {
+            get {
+                return this.PageSizeField;
+            }
+            set {
+                if ((this.PageSizeField.Equals(value) != true)) {
+                    this.PageSizeField = value;
+                    this.RaisePropertyChanged("PageSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sort {
+            get {
+                return this.SortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SortField, value) != true)) {
+                    this.SortField = value;
+                    this.RaisePropertyChanged("Sort");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SuccessMessage {
+            get {
+                return this.SuccessMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SuccessMessageField, value) != true)) {
+                    this.SuccessMessageField = value;
+                    this.RaisePropertyChanged("SuccessMessage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumListResultModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
+    [System.SerializableAttribute()]
+    public partial class AlbumListResultModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private PagedList.PagedList<Musicalog.Web.Services.AlbumListItemModel> AlbumsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageSizeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SortField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Musicalog.Data.Models.SortDirection SortDirectionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SuccessMessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public PagedList.PagedList<Musicalog.Web.Services.AlbumListItemModel> Albums {
+            get {
+                return this.AlbumsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlbumsField, value) != true)) {
+                    this.AlbumsField = value;
+                    this.RaisePropertyChanged("Albums");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Page {
+            get {
+                return this.PageField;
+            }
+            set {
+                if ((this.PageField.Equals(value) != true)) {
+                    this.PageField = value;
+                    this.RaisePropertyChanged("Page");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageSize {
+            get {
+                return this.PageSizeField;
+            }
+            set {
+                if ((this.PageSizeField.Equals(value) != true)) {
+                    this.PageSizeField = value;
+                    this.RaisePropertyChanged("PageSize");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Sort {
+            get {
+                return this.SortField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SortField, value) != true)) {
+                    this.SortField = value;
+                    this.RaisePropertyChanged("Sort");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Musicalog.Data.Models.SortDirection SortDirection {
+            get {
+                return this.SortDirectionField;
+            }
+            set {
+                if ((this.SortDirectionField.Equals(value) != true)) {
+                    this.SortDirectionField = value;
+                    this.RaisePropertyChanged("SortDirection");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SuccessMessage {
+            get {
+                return this.SuccessMessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SuccessMessageField, value) != true)) {
+                    this.SuccessMessageField = value;
+                    this.RaisePropertyChanged("SuccessMessage");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AlbumListItemModel", Namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models")]
+    [System.SerializableAttribute()]
+    public partial class AlbumListItemModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ArtistField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Artist {
+            get {
+                return this.ArtistField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArtistField, value) != true)) {
+                    this.ArtistField = value;
+                    this.RaisePropertyChanged("Artist");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Stock {
+            get {
+                return this.StockField;
+            }
+            set {
+                if ((this.StockField.Equals(value) != true)) {
+                    this.StockField = value;
+                    this.RaisePropertyChanged("Stock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Services.IAlbumService")]
     public interface IAlbumService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted", ReplyAction="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse")]
-        Musicalog.Web.Services.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Data.Models.SortDirection direction);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetAllPagedAndSorted", ReplyAction="http://tempuri.org/IAlbumService/GetAllPagedAndSortedResponse")]
-        System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Data.Models.SortDirection direction);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetById", ReplyAction="http://tempuri.org/IAlbumService/GetByIdResponse")]
-        Musicalog.Web.Services.AlbumDetailsModel GetById(System.Guid id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetById", ReplyAction="http://tempuri.org/IAlbumService/GetByIdResponse")]
-        System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumDetailsModel> GetByIdAsync(System.Guid id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Create", ReplyAction="http://tempuri.org/IAlbumService/CreateResponse")]
         Musicalog.Web.Services.CreateAlbumResultModel Create(Musicalog.Web.Services.CreateAlbumRequestModel model);
@@ -702,17 +799,29 @@ namespace Musicalog.Web.Services {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Create", ReplyAction="http://tempuri.org/IAlbumService/CreateResponse")]
         System.Threading.Tasks.Task<Musicalog.Web.Services.CreateAlbumResultModel> CreateAsync(Musicalog.Web.Services.CreateAlbumRequestModel model);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDetails", ReplyAction="http://tempuri.org/IAlbumService/GetDetailsResponse")]
+        Musicalog.Web.Services.AlbumDetailsResultModel GetDetails(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDetails", ReplyAction="http://tempuri.org/IAlbumService/GetDetailsResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumDetailsResultModel> GetDetailsAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Delete", ReplyAction="http://tempuri.org/IAlbumService/DeleteResponse")]
+        Musicalog.Web.Services.DeleteAlbumResultModel Delete(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Delete", ReplyAction="http://tempuri.org/IAlbumService/DeleteResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.Services.DeleteAlbumResultModel> DeleteAsync(System.Guid id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/List", ReplyAction="http://tempuri.org/IAlbumService/ListResponse")]
+        Musicalog.Web.Services.AlbumListResultModel List(Musicalog.Web.Services.AlbumListRequestModel request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/List", ReplyAction="http://tempuri.org/IAlbumService/ListResponse")]
+        System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumListResultModel> ListAsync(Musicalog.Web.Services.AlbumListRequestModel request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel", ReplyAction="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse")]
         Musicalog.Web.Services.CreateAlbumRequestModel GetDefaultCreateModel();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/GetDefaultCreateModel", ReplyAction="http://tempuri.org/IAlbumService/GetDefaultCreateModelResponse")]
         System.Threading.Tasks.Task<Musicalog.Web.Services.CreateAlbumRequestModel> GetDefaultCreateModelAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Delete", ReplyAction="http://tempuri.org/IAlbumService/DeleteResponse")]
-        Musicalog.Web.Services.DeleteAlbumResultModel Delete(System.Guid albumId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAlbumService/Delete", ReplyAction="http://tempuri.org/IAlbumService/DeleteResponse")]
-        System.Threading.Tasks.Task<Musicalog.Web.Services.DeleteAlbumResultModel> DeleteAsync(System.Guid albumId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -742,22 +851,6 @@ namespace Musicalog.Web.Services {
                 base(binding, remoteAddress) {
         }
         
-        public Musicalog.Web.Services.AlbumListModel GetAllPagedAndSorted(int page, int take, string sort, Musicalog.Data.Models.SortDirection direction) {
-            return base.Channel.GetAllPagedAndSorted(page, take, sort, direction);
-        }
-        
-        public System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumListModel> GetAllPagedAndSortedAsync(int page, int take, string sort, Musicalog.Data.Models.SortDirection direction) {
-            return base.Channel.GetAllPagedAndSortedAsync(page, take, sort, direction);
-        }
-        
-        public Musicalog.Web.Services.AlbumDetailsModel GetById(System.Guid id) {
-            return base.Channel.GetById(id);
-        }
-        
-        public System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumDetailsModel> GetByIdAsync(System.Guid id) {
-            return base.Channel.GetByIdAsync(id);
-        }
-        
         public Musicalog.Web.Services.CreateAlbumResultModel Create(Musicalog.Web.Services.CreateAlbumRequestModel model) {
             return base.Channel.Create(model);
         }
@@ -766,20 +859,36 @@ namespace Musicalog.Web.Services {
             return base.Channel.CreateAsync(model);
         }
         
+        public Musicalog.Web.Services.AlbumDetailsResultModel GetDetails(System.Guid id) {
+            return base.Channel.GetDetails(id);
+        }
+        
+        public System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumDetailsResultModel> GetDetailsAsync(System.Guid id) {
+            return base.Channel.GetDetailsAsync(id);
+        }
+        
+        public Musicalog.Web.Services.DeleteAlbumResultModel Delete(System.Guid id) {
+            return base.Channel.Delete(id);
+        }
+        
+        public System.Threading.Tasks.Task<Musicalog.Web.Services.DeleteAlbumResultModel> DeleteAsync(System.Guid id) {
+            return base.Channel.DeleteAsync(id);
+        }
+        
+        public Musicalog.Web.Services.AlbumListResultModel List(Musicalog.Web.Services.AlbumListRequestModel request) {
+            return base.Channel.List(request);
+        }
+        
+        public System.Threading.Tasks.Task<Musicalog.Web.Services.AlbumListResultModel> ListAsync(Musicalog.Web.Services.AlbumListRequestModel request) {
+            return base.Channel.ListAsync(request);
+        }
+        
         public Musicalog.Web.Services.CreateAlbumRequestModel GetDefaultCreateModel() {
             return base.Channel.GetDefaultCreateModel();
         }
         
         public System.Threading.Tasks.Task<Musicalog.Web.Services.CreateAlbumRequestModel> GetDefaultCreateModelAsync() {
             return base.Channel.GetDefaultCreateModelAsync();
-        }
-        
-        public Musicalog.Web.Services.DeleteAlbumResultModel Delete(System.Guid albumId) {
-            return base.Channel.Delete(albumId);
-        }
-        
-        public System.Threading.Tasks.Task<Musicalog.Web.Services.DeleteAlbumResultModel> DeleteAsync(System.Guid albumId) {
-            return base.Channel.DeleteAsync(albumId);
         }
     }
 }

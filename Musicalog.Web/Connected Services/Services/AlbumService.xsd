@@ -1,50 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" />
-  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" />
+  <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" />
   <xs:import schemaLocation="http://localhost:55540/AlbumService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-  <xs:element name="GetAllPagedAndSorted">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="page" type="xs:int" />
-        <xs:element minOccurs="0" name="take" type="xs:int" />
-        <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Musicalog.Data.Models" minOccurs="0" name="direction" type="q1:SortDirection" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAllPagedAndSortedResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetAllPagedAndSortedResult" nillable="true" type="q2:AlbumListModel" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q3:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetByIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetByIdResult" nillable="true" type="q4:AlbumDetailsModel" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="Create">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="model" nillable="true" type="q5:CreateAlbumRequestModel" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="model" nillable="true" type="q1:CreateAlbumRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="CreateResult" nillable="true" type="q6:CreateAlbumResultModel" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="CreateResult" nillable="true" type="q2:CreateAlbumResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDetailsResult" nillable="true" type="q4:AlbumDetailsResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="id" type="q5:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="DeleteResult" nillable="true" type="q6:DeleteAlbumResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="List">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="request" nillable="true" type="q7:AlbumListRequestModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="ListResult" nillable="true" type="q8:AlbumListResultModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,21 +66,7 @@
   <xs:element name="GetDefaultCreateModelResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDefaultCreateModelResult" nillable="true" type="q7:CreateAlbumRequestModel" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Delete">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="albumId" type="q8:guid" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="DeleteResult" nillable="true" type="q9:DeleteAlbumResultModel" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Musicalog.Service.Models" minOccurs="0" name="GetDefaultCreateModelResult" nillable="true" type="q9:CreateAlbumRequestModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -54,6 +54,7 @@
     <Compile Include="Album.cs" />
     <Compile Include="AlbumType.cs" />
     <Compile Include="Artist.cs" />
+    <Compile Include="Entity.cs" />
     <Compile Include="Label.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortDirection.cs" />

@@ -2,7 +2,7 @@
 @using Musicalog.Data;
 @using PagedList;
 
-@model AlbumListModel
+@model AlbumListResultModel
 
 @{
     ViewBag.Title = "All Albums";
@@ -24,10 +24,10 @@
             <thead>
                 <tr>
                     <th class="w-5">#</th>
-                    <th class="w-45" data-sort="Name">@(nameof(AlbumDetailsModel.Name)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
-                    <th class="w-20" data-sort="Artist">@(nameof(AlbumDetailsModel.Artist)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
-                    <th class="w-10" data-sort="Stock">@(nameof(AlbumDetailsModel.Stock)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
-                    <th class="w-10" data-sort="Type">@(nameof(AlbumDetailsModel.Type)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-45" data-sort="Name">@(nameof(AlbumListItemModel.Name)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-20" data-sort="Artist">@(nameof(AlbumListItemModel.Artist)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-10" data-sort="Stock">@(nameof(AlbumListItemModel.Stock)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
+                    <th class="w-10" data-sort="Type">@(nameof(AlbumListItemModel.Type)) <i class="bi bi-sort-up"></i><i class="bi bi-sort-down"></i></th>
                     <th class="w-10">Edit</th>
                     <th class="w-10">Remove</th>
                 </tr>
